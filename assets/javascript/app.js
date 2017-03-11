@@ -155,6 +155,15 @@ $(document).ready(function(){
   		console.log("The read failed: " + errorObject.code);
 	});
 
+	database.ref().on("child_removed", function(snapshot) {
+		location.reload();
+
+
+	}, function(errorObject) {
+  		console.log("The read failed: " + errorObject.code);
+	});
+
+
 
 	$(document).on("click", ".train-data-edit", function(){
 		console.log(this.value);
